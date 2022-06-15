@@ -25,7 +25,6 @@ jobs:
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -53,4 +52,4 @@ jobs:
           app-name: 'wad-azure-test'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_FE70D408F1444AF38DD428AE094EF9A0 }}
-          package: .
+          package: ./dist/azure-wad
